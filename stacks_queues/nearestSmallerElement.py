@@ -22,4 +22,3 @@ class Solution:
                 out.append(-1)
             stack.append(A[i])
         return out
-            
