@@ -9,10 +9,12 @@ class graphi:
 	
 	def dfs(self,i,j, visited):
 		
-		row_call= [-1,-1,-1,0,0,1,1,1]
-		col_call= [-1,0,1,-1,1,-1,0,1]
+		#row_call= [-1,-1,-1,0,0,1,1,1]
+		#col_call= [-1,0,1,-1,1,-1,0,1]
+		row_call=[-1,0,0,1]
+		col_call=[0,-1,1,0]
 		visited[i][j]=True
-		for x in range(8):
+		for x in range(4):
 			if self.safe(i+row_call[x],j+col_call[x],visited):
 				self.dfs(i+row_call[x],j+col_call[x],visited)
 
@@ -27,12 +29,7 @@ class graphi:
 		return count
 
 
-grid = [
-  [1,1,1,1,0],
-  [1,1,0,1,0],
-  [1,1,0,0,0],
-  [0,0,0,0,0]
-]
+grid = [[1,1,0,0,0],[1,1,0,0,0],[0,0,1,0,0],[0,0,0,1,1]]
 
 
 g=graphi(len(grid), len(grid[0]), grid)
